@@ -72,7 +72,15 @@ If downloading the image is not possible for you, then another option is to buil
 git clone https://github.com/schelterlabs/bd22-docker-setup.git
 ```
 
-**Step 2:** Build the Dockerfile
+**Step 2:** Ensure library versions are compatible
+
+Change line 4 of the `Dockerfile` file to build the correct version:
+
+from: `ARG BASE_CONTAINER=$OWNER/scipy-notebook`
+to:   `ARG BASE_CONTAINER=$OWNER/scipy-notebook:python-3.9.7`
+
+
+**Step 3:** Build the Dockerfile
 
 ```
 cd bd22-docker-setup
